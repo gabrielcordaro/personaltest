@@ -1,0 +1,80 @@
+Prefix(:=<http://www.semanticweb.org/gabrielcordaro/ontologies/2024/5/untitled-ontology-4#>)
+Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
+Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
+Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
+Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
+Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
+
+
+Ontology(<http://www.semanticweb.org/gabrielcordaro/ontologies/2024/5/untitled-ontology-4>
+
+Declaration(Class(:departments))
+Declaration(Class(:employees))
+Declaration(Class(:processes))
+Declaration(Class(:roles))
+Declaration(Class(:service_groups))
+Declaration(Class(:services))
+Declaration(Class(:skills))
+Declaration(ObjectProperty(:assigned_to))
+Declaration(ObjectProperty(:deliver))
+Declaration(ObjectProperty(:have))
+Declaration(ObjectProperty(:include))
+Declaration(ObjectProperty(:require))
+Declaration(ObjectProperty(:work_in))
+Declaration(ObjectProperty(:work_with))
+############################
+#   Object Properties
+############################
+
+# Object Property: :assigned_to (:assigned_to)
+
+SubObjectPropertyOf(:assigned_to owl:topObjectProperty)
+ObjectPropertyDomain(:assigned_to :employees)
+ObjectPropertyRange(:assigned_to :roles)
+
+# Object Property: :deliver (:deliver)
+
+SubObjectPropertyOf(:deliver owl:topObjectProperty)
+ObjectPropertyDomain(:deliver :departments)
+ObjectPropertyRange(:deliver :services)
+
+# Object Property: :have (:have)
+
+SubObjectPropertyOf(:have owl:topObjectProperty)
+ObjectPropertyDomain(:have :employees)
+ObjectPropertyRange(:have :skills)
+
+# Object Property: :include (:include)
+
+SubObjectPropertyOf(:include owl:topObjectProperty)
+ObjectPropertyDomain(:include :service_groups)
+ObjectPropertyRange(:include :services)
+
+# Object Property: :require (:require)
+
+SubObjectPropertyOf(:require owl:topObjectProperty)
+ObjectPropertyDomain(:require :roles)
+ObjectPropertyRange(:require :skills)
+
+# Object Property: :work_in (:work_in)
+
+SubObjectPropertyOf(:work_in owl:topObjectProperty)
+ObjectPropertyDomain(:work_in :employees)
+ObjectPropertyRange(:work_in :departments)
+
+# Object Property: :work_with (:work_with)
+
+ObjectPropertyDomain(:work_with :employees)
+ObjectPropertyRange(:work_with :employees)
+
+
+############################
+#   Classes
+############################
+
+# Class: :services (:services)
+
+SubClassOf(:services :service_groups)
+
+
+)
